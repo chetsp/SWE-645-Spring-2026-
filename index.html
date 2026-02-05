@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Campus Connect</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #a8e6cf 0%, #88d8b0 100%);
+            color: #2c3e50;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .campus-image {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 100%;
+            height: auto;
+        }
+        .btn-survey {
+            background-color: #7bc96f;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            color: white;
+        }
+        .btn-survey:hover {
+            background-color: #5fb052;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: white;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Campus Connect</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="survey.html">Student Survey</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Welcome to Campus Connect</h1>
+            <p class="lead mb-5">Your Gateway to Academic Excellence</p>
+            <a href="survey.html" class="btn btn-survey">Take Our Survey</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="campus.jpg" 
+                         alt="Beautiful Campus View" 
+                         class="campus-image">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Discover Your Future at Our Campus</h2>
+                    <p class="lead text-muted">
+                        Welcome to Campus Connect, where innovation meets tradition and dreams become reality. 
+                        Our university offers a vibrant learning environment that nurtures academic excellence, 
+                        creativity, and personal growth. With state-of-the-art facilities, dedicated faculty, 
+                        and a diverse student community, we provide an unparalleled educational experience.
+                    </p>
+                    <p class="text-muted">
+                        Whether you're interested in cutting-edge research, engaging student life, or world-class 
+                        athletics, our campus has something for everyone. Join thousands of students who have 
+                        chosen to make their mark here. Explore our beautiful campus, connect with current students, 
+                        and discover why Campus Connect is the perfect place to pursue your educational goals.
+                    </p>
+                    <div class="mt-4">
+                        <a href="survey.html" class="btn btn-lg" style="background-color: #7bc96f; color: white; border: none;">Share Your Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Us?</h2>
+            <div class="row">
+                <div class="col-md-4 text-center mb-4">
+                    <div class="mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#7bc96f" viewBox="0 0 16 16">
+                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                    </div>
+                    <h4>Academic Excellence</h4>
+                    <p class="text-muted">Top-ranked programs and world-class faculty</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <div class="mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#7bc96f" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+                        </svg>
+                    </div>
+                    <h4>Vibrant Campus Life</h4>
+                    <p class="text-muted">Diverse clubs, events, and activities</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <div class="mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#7bc96f" viewBox="0 0 16 16">
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                        </svg>
+                    </div>
+                    <h4>Modern Facilities</h4>
+                    <p class="text-muted">State-of-the-art labs and comfortable dorms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Campus Connect. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="index.html" class="text-white text-decoration-none me-3">Home</a>
+                <a href="survey.html" class="text-white text-decoration-none">Survey</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
