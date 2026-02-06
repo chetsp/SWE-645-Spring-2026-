@@ -13,7 +13,7 @@
 * **Bucket Creation:** Created `645-1-my-campus-connect-site` in `us-east-2`.
 * **Permissions:** Disabled *Block all public access* and applied a JSON policy for `s3:GetObject`.
 * **Hosting:** Enabled *Static website hosting* with `index.html` as the entry point.
-* **Artifacts:** Uploaded `index.html` and `campus.jpg`.
+* **Artifacts:** Uploaded `index.html` , `survey.html` and `campus.jpg`.
 
 ## 3. EC2 Instance Configuration
 * **Instance:** Ubuntu 24.04 LTS (`t3.micro`).
