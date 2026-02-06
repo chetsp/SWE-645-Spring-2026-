@@ -38,6 +38,11 @@ sudo wget -O /var/www/html/campus.jpg [http://645-1-my-campus-connect-site.s3-we
 sudo chown -R ubuntu:ubuntu /var/www/html
 sudo chmod 644 /var/www/html/*.html
 sudo chmod 644 /var/www/html/campus.jpg
+
+# Custom Error Page (Edit /etc/apache2/sites-available/000-default.conf)
+# Add: ErrorDocument 404 /error.html
+sudo systemctl restart apache2
+
 ```
 ## 5. Source File Descriptions
 | File Name | Description |
@@ -47,6 +52,3 @@ sudo chmod 644 /var/www/html/campus.jpg
 | `error.html` | Custom 404 page for non-existent URLs. |
 | `campus.jpg` | Image asset used across S3 and EC2 deployments. |
 
-# Custom Error Page (Edit /etc/apache2/sites-available/000-default.conf)
-# Add: ErrorDocument 404 /error.html
-sudo systemctl restart apache2
