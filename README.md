@@ -5,9 +5,7 @@ SWE-645-SPRING-2026: CAMPUSCONNECT DEPLOYMENT
 Student Name: Chetana Patel
 Course:       SWE-645
 Assignment:   Assignment 1 - S3 and EC2 Deployment
-Date:         February 2026
 
-NOTE: GitHub strips custom CSS and most inline style attributes from Markdown rendered on github.com, so you cannot reliably change the README.md font on GitHub itself. To view this document with a specific "technical document" font, open the styled HTML version: [README.html](https://github.com/chetsp/SWE-645-Spring-2026-/blob/main/README.html)
 
 1. PROJECT URLs
 ------------------------------------------------------------
