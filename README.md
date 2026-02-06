@@ -1,46 +1,48 @@
-# SWE-645-Spring-2026-
-CampusConnect Deployment
+============================================================
+SWE-645-SPRING-2026: CAMPUSCONNECT DEPLOYMENT
+============================================================
 Student Name: Chetana Patel
+Course:       SWE-645
+Assignment:   Assignment 1 - S3 and EC2 Deployment
+Date:         February 2026
 
-Course: SWE-645
+1. PROJECT URLs
+------------------------------------------------------------
+S3 Static Website: 
+http://645-1-my-campus-connect-site.s3-website.us-east-2.amazonaws.com
 
-Assignment 1 - S3 and EC2 Deployment
+EC2 Web Application: 
+http://3.23.87.66
 
-1. Project URLs
-S3 Static Website: http://645-1-my-campus-connect-site.s3-website.us-east-2.amazonaws.com
 
-EC2 Web Application: http://3.23.87.66
+2. S3 BUCKET CONFIGURATION STEPS
+------------------------------------------------------------
+* Bucket Creation: Created a unique bucket named 
+  '645-1-my-campus-connect-site' in the us-east-2 region.
+* Public Access: Disabled "Block all public access" settings 
+  to allow the website to be viewable.
+* Static Hosting: Enabled "Static website hosting" in 
+  Properties, setting index.html as the index document.
+* Bucket Policy: Applied a JSON bucket policy to grant 
+  s3:GetObject permissions to all users ("Principal": "*").
+* Artifacts: Uploaded index.html and campus.jpg to the root.
 
-2. S3 Bucket Configuration Steps
-Bucket Creation: Created a unique bucket named 645-1-my-campus-connect-site in the us-east-2 region.
 
-Public Access: Disabled "Block all public access" settings to allow the website to be viewable.
+3. EC2 INSTANCE CONFIGURATION STEPS
+------------------------------------------------------------
+* Launch: Launched an Ubuntu 24.04 LTS t2.micro instance.
+* Security Group: Configured inbound rules for:
+    - SSH (Port 22): Administrative terminal access.
+    - HTTP (Port 80): Public web traffic access.
+* Installation: Installed Apache2 using the apt package manager.
+* Deployment: Moved source files to /var/www/html and pulled 
+  the campus image from the S3 bucket using wget.
+* Custom 404: Modified the Apache virtual host configuration 
+  to redirect invalid requests to error.html.
 
-Static Hosting: Navigated to Properties > Static website hosting and enabled it, setting index.html as the index document.
 
-Bucket Policy: Applied a JSON bucket policy to grant s3:GetObject permissions to all users ("Principal": "*") so the site is publicly reachable.
-
-Artifacts: Uploaded index.html and campus.jpg to the root of the bucket.
-
-3. EC2 Instance Configuration Steps
-Launch: Launched an Ubuntu 24.04 LTS t2.micro instance.
-
-Security Group: Configured inbound rules to allow:
-
-SSH (Port 22): For administrative access.
-
-HTTP (Port 80): For public web traffic.
-
-Software Installation: Installed the Apache2 web server using the apt package manager.
-
-Deployment: Moved HTML source files to the /var/www/html directory and pulled the campus image from S3.
-
-Custom 404: Modified the Apache virtual host configuration to redirect invalid requests to a custom error.html page.
-
-4. Implementation Commands (Linux Terminal)
-The following commands were executed on the Ubuntu server:
-
-Bash
+4. IMPLEMENTATION COMMANDS (LINUX TERMINAL)
+------------------------------------------------------------
 # System Update & Apache Installation
 sudo apt update -y
 sudo apt install apache2 -y
@@ -61,11 +63,12 @@ sudo chmod 644 /var/www/html/campus.jpg
 # ErrorDocument 404 /error.html
 sudo systemctl restart apache2
 
-5. Source File Descriptions
-index.html: The homepage of the application featuring campus information and navigation links.
 
-survey.html: A data collection form for students, including text inputs, radio buttons, checkboxes, and a raffle entry.
+5. SOURCE FILE DESCRIPTIONS
+------------------------------------------------------------
+* index.html: Main landing page with campus info and links.
+* survey.html: Data collection form with raffle entry field.
+* error.html: Custom 404 page for non-existent URLs.
+* campus.jpg: Image asset used across S3 and EC2 deployments.
 
-error.html: A custom-designed error page that displays when a user attempts to access a non-existent URL on the server.
-
-campus.jpg: The image asset used across both S3 and EC2 deployments.
+============================================================
