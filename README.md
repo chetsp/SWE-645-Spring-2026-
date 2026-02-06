@@ -2,9 +2,7 @@
 SWE-645-SPRING-2026: CAMPUSCONNECT DEPLOYMENT
 ============================================================
 Student Name: Chetana Patel
-
 Course:       SWE-645
-
 Assignment:   Assignment 1 - S3 and EC2 Deployment
 
 1. PROJECT URLs
