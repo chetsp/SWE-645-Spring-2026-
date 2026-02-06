@@ -16,8 +16,9 @@
 * **Artifacts:** Uploaded `index.html` and `campus.jpg`.
 
 ## 3. EC2 Instance Configuration
-* **Instance:** Ubuntu 24.04 LTS (`t2.micro`).
-* **Security Group:** * Port 22 (SSH) for admin access.
+* **Instance:** Ubuntu 24.04 LTS (`t3.micro`).
+* **Security Group:**
+  * Port 22 (SSH) for admin access.
   * Port 80 (HTTP) for public traffic.
 * **Web Server:** Apache2 installed via `apt`.
 * **Customization:** Configured a custom 404 redirect to `error.html` in the virtual host file.
