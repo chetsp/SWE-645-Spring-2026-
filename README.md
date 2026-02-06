@@ -1,10 +1,8 @@
 # SWE-645: CampusConnect Deployment
-**Student:** Chetana Patel  
-**Course:** SWE-645
-**Assignment:** Assignment 1 - S3 and EC2 Deployment
-**Github Link:** https://github.com/chetsp/SWE-645-Spring-2026-
-
-
+* **Student:** Chetana Patel
+* **Course:** SWE-645
+* **Assignment:** Assignment 1 - S3 and EC2 Deployment
+* **Git Hub link:** https://github.com/chetsp/SWE-645-Spring-2026-
 ---
 
 ## 1. Project URLs
