@@ -23,7 +23,7 @@ pipeline {
                 script {
                     sh 'docker login -u ${DOCKER_USER} -p ${DOCKERHUB_PASS}'
                     def img = docker.build(
-                        "${DOCKER_USER}/${IMAGE_NAME}:${BUILD_TIMESTAMP}"
+                        "${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP}"
                     )
                     img.push()
                     img.push('latest')
@@ -36,7 +36,7 @@ pipeline {
                 script {
                     sh '''
                         kubectl set image deployment/${DEPLOY_NAME} \
-                          campusconnect=${DOCKER_USER}/${IMAGE_NAME}:${BUILD_TIMESTAMP} \
+                          campusconnect=${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP} \
                           -n ${K8S_NAMESPACE}
                     '''
                 }
