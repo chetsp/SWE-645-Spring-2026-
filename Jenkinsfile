@@ -20,7 +20,6 @@ pipeline {
         stage('Build & Push Docker Image') {
             steps {
                 script {
-                    // Standard Docker CLI commands work without the Docker Pipeline plugin
                     sh "docker login -u ${DOCKER_USER} -p ${DOCKERHUB_PASS}"
                     sh "docker build -t ${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP} ."
                     sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP}"
@@ -33,8 +32,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
+                    // Added KUBECONFIG export and full path to kubectl
                     sh """
-                        kubectl set image deployment/${DEPLOY_NAME} \
+                        export KUBECONFIG=/etc/rancher/rke2/rke2.yaml
+                        /var/lib/rancher/rke2/bin/kubectl set image deployment/${DEPLOY_NAME} \
                           campusconnect=${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP} \
                           -n ${K8S_NAMESPACE}
                     """
@@ -42,7 +43,7 @@ pipeline {
             }
         }
     }
-
+        
     post {
         success {
             echo 'Deployment successful!'
