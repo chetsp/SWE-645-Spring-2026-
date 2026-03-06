@@ -1,0 +1,22 @@
+# deployment.yaml
+# Defines the CampusConnect Kubernetes Deployment with 3 pods
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campusconnect-deployment
+  namespace: campusconnect-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: campusconnect
+  template:
+    metadata:
+      labels:
+        app: campusconnect
+    spec:
+      containers:
+      - name: campusconnect
+        image: chetsp2613/campusconnect:1.0
+        ports:
+        - containerPort: 8080
