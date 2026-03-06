@@ -25,7 +25,7 @@ SWE-645-Spring-2026-/
 ├── campus.jpg               # Campus image
 ├── Dockerfile               # Docker image build instructions
 ├── Jenkinsfile              # CI/CD pipeline definition
-├── deployment.yaml    # Kubernetes Deployment manifest (3 pods)
+├── deployment.yaml          # Kubernetes Deployment manifest (3 pods)
 ├── service.yaml             # Kubernetes Service manifest (LoadBalancer)
 └── README.md                # This file
 ```
