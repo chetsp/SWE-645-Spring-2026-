@@ -11,7 +11,6 @@ pipeline {
     }
 
     stages {
-
         stage('Checkout') {
             steps {
                 checkout scm
@@ -21,10 +20,9 @@ pipeline {
         stage('Build & Push Docker Image') {
             steps {
                 script {
-                    sh 'docker login -u ${DOCKER_USER} -p ${DOCKERHUB_PASS}'
-                    def img = docker.build(
-                        "${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP}"
-                    )
+                    sh "docker login -u ${DOCKER_USER} -p ${DOCKERHUB_PASS}"
+                    // Fixed: Removed the stray ')' from the next line
+                    def img = docker.build("${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP}")
                     img.push()
                     img.push('latest')
                 }
@@ -34,11 +32,11 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    sh '''
+                    sh """
                         kubectl set image deployment/${DEPLOY_NAME} \
                           campusconnect=${DOCKER_USER}/${IMAGE_NAME}:${TIMESTAMP} \
                           -n ${K8S_NAMESPACE}
-                    '''
+                    """
                 }
             }
         }
